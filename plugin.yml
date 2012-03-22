@@ -1,0 +1,6 @@
+name: J2MC_IPtracker
+main: to.joe.j2mc.iptracker.J2MC_IPtracker
+version: 0.0prealpha
+website: http://forums.joe.to
+author: J2 Minecraft Plugin Team
+description: IP tracking module
