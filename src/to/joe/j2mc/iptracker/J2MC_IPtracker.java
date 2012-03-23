@@ -11,12 +11,15 @@ import org.bukkit.event.player.PlayerPreLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import to.joe.j2mc.core.J2MC_Manager;
+import to.joe.j2mc.iptracker.command.IPLookupCommand;
 
 public class J2MC_IPtracker extends JavaPlugin implements Listener{
 
     @Override
     public void onEnable(){
         this.getServer().getPluginManager().registerEvents(this, this);
+        this.getCommand("iplookup").setExecutor(new IPLookupCommand(this));
+        
         this.getLogger().info("IP tracker module enabled");
     }
     

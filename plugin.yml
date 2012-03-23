@@ -4,3 +4,10 @@ version: 0.0prealpha
 website: http://forums.joe.to
 author: J2 Minecraft Plugin Team
 description: IP tracking module
+commands:
+  iplookup:
+    description: look up ips
+    usage: /iplookup <playername>
+permissions:
+  j2mc.admin:
+    description: lets people look up ips
