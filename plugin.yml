@@ -6,8 +6,10 @@ author: J2 Minecraft Plugin Team
 description: IP tracking module
 commands:
   iplookup:
+    permission: j2mc.core.admin
+    aliases: [match, ip]
     description: look up ips
     usage: /iplookup <playername>
 permissions:
-  j2mc.admin:
+  j2mc.core.admin:
     description: lets people look up ips
