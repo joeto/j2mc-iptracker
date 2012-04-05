@@ -1,15 +1,15 @@
 name: J2MC_IPtracker
 main: to.joe.j2mc.iptracker.J2MC_IPtracker
-version: 0.0prealpha
+version: 1.0
 website: http://forums.joe.to
 author: J2 Minecraft Plugin Team
 description: IP tracking module
 commands:
   iplookup:
-    permission: j2mc.core.admin
+    permission: j2mc.iptracker.admin
     aliases: [match, ip]
     description: look up ips
     usage: /iplookup <playername>
 permissions:
-  j2mc.core.admin:
+  j2mc.iptracker.admin:
     description: lets people look up ips
