@@ -7,9 +7,27 @@ description: IP tracking module
 commands:
   iplookup:
     permission: j2mc.iptracker.admin
+    permission-message: Can't let you do that Star Fox
     aliases: [match, ip]
     description: look up ips
     usage: /iplookup <playername>
+  ban-ip:
+    description: ban ips
+    aliases: [banip, ipban]
+    usage: /ban-ip ip reason
+    permission: j2mc.iptracker.admin
+    permission-message: Can't let you do that Star Fox
+  pardon-ip:
+    description: Unbans the user's last used ip
+    aliases: [unbanip, ipunban]
+    usage: /pardon-ip player/ip
+    permission: j2mc.iptracker.admin
+    permission-message: Can't let you do that Star Fox
+  stomp:
+    description: Bans the player and their latest IP address
+    usage: /stomp player reason
+    permission: j2mc.iptracker.admin
+    permission-message: Can't let you do that Star Fox
 permissions:
   j2mc.iptracker.admin:
-    description: lets people look up ips
+    description: ip admin stuff
