@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.logging.Level;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -55,10 +54,11 @@ public class StompCommand extends MasterCommand {
             sender.sendMessage(ChatColor.RED + "No IP matches on that username, could not stomp.");
             return;
         } else {
-            ((Server) this.plugin).banIP(ip);
+            final String reason = J2MC_Core.combineSplit(1, args, " ");
+            ((J2MC_IPtracker) this.plugin).banIP(ip, reason, sender.getName());
             J2MC_Manager.getCore().adminAndLog(ChatColor.RED + "Banning " + ip + " by " + sender.getName());
-            final String reason = J2MC_Core.combineSplit(1, args, " ").replace(":", "/OMGREPLACEWITHCOLON\\");
-            final String toSend = (sender.getName() + ":" + target + ":" + reason + ":" + sender.getName());
+            final String reasonprocessed = reason.replace(":", "/OMGREPLACEWITHCOLON\\");
+            final String toSend = (sender.getName() + ":" + target + ":" + reasonprocessed + ":" + sender.getName());
             final HashSet<String> targets = new HashSet<String>();
             targets.add("NEWADDBAN");
             this.plugin.getServer().getPluginManager().callEvent(new MessageEvent(targets, toSend));
