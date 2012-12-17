@@ -15,7 +15,7 @@ import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
 import to.joe.j2mc.iptracker.J2MC_IPtracker;
 
-public class IPLookupCommand extends MasterCommand {
+public class IPLookupCommand extends MasterCommand<J2MC_IPtracker> {
 
     public IPLookupCommand(J2MC_IPtracker iptracker) {
         super(iptracker);

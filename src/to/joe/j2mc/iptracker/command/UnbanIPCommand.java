@@ -13,7 +13,7 @@ import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
 import to.joe.j2mc.iptracker.J2MC_IPtracker;
 
-public class UnbanIPCommand extends MasterCommand {
+public class UnbanIPCommand extends MasterCommand<J2MC_IPtracker> {
 
     public UnbanIPCommand(J2MC_IPtracker iptracker) {
         super(iptracker);

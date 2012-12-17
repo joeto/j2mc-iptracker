@@ -9,7 +9,7 @@ import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
 import to.joe.j2mc.iptracker.J2MC_IPtracker;
 
-public class BanIPCommand extends MasterCommand {
+public class BanIPCommand extends MasterCommand<J2MC_IPtracker> {
 
     public BanIPCommand(J2MC_IPtracker iptracker) {
         super(iptracker);
@@ -21,10 +21,10 @@ public class BanIPCommand extends MasterCommand {
             sender.sendMessage(ChatColor.RED + "/ban-ip ip reason");
             return;
         }
-        if (((J2MC_IPtracker) this.plugin).isIP(args[0])) {
+        if (this.plugin.isIP(args[0])) {
             final String reason = J2MC_Core.combineSplit(1, args, " ");
             J2MC_Manager.getCore().adminAndLog(ChatColor.RED + "Banning " + args[0] + " by " + sender.getName() + ": " + reason);
-            ((J2MC_IPtracker) this.plugin).banIP(args[0], reason, sender.getName());
+            this.plugin.banIP(args[0], reason, sender.getName());
         } else {
             sender.sendMessage(ChatColor.RED + "Not a valid IP");
         }

@@ -16,7 +16,7 @@ import to.joe.j2mc.core.command.MasterCommand;
 import to.joe.j2mc.core.event.MessageEvent;
 import to.joe.j2mc.iptracker.J2MC_IPtracker;
 
-public class StompCommand extends MasterCommand {
+public class StompCommand extends MasterCommand<J2MC_IPtracker> {
 
     public StompCommand(J2MC_IPtracker iptracker) {
         super(iptracker);
